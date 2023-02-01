@@ -26,3 +26,7 @@ a {
 .active {
   background-color: rgb(32 33 36);
 }
+
+.category-list-name {
+  text-transform: capitalize;
+}
