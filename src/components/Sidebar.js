@@ -26,17 +26,24 @@ const Sidebar = () => {
       { !isLoading ? 
         categories.sort().map((item) => {
           return (
-          <NavLink 
-            to={`/shop/${item}`}
-            state={{category: `${item}`}}
-            key={uuidv4()}>
-              <li className="category-list-name">{item.replace('-', ' ')}</li>
-          </NavLink>
+          
+            <li 
+              className="category-list-name"
+              key={uuidv4()}
+            >
+              <NavLink 
+              to={`/shop/${item}`}
+              state={{category: `${item}`}}
+              >
+              {item.replace('-', ' ')}
+              </NavLink>
+            </li>
           )
         })
         : <Loader />
       }
       </ul>
+
     </nav>
   )
 }
