@@ -1,11 +1,12 @@
 import {useState, useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { NavLink } from 'react-router-dom';
+import Loader from './Loader';
 
 const Sidebar = () => {
 
   const [categories, setCategories] = useState([]);
-  const [isLoading, setIsLoading] = useState([true])
+  const [isLoading, setIsLoading] = useState(true)
 
  
   const getShoppingCategories = async () => {
@@ -33,7 +34,7 @@ const Sidebar = () => {
           </NavLink>
           )
         })
-        : 'loading' // to be replaced with loader.js
+        : <Loader />
       }
       </ul>
     </nav>

@@ -3,7 +3,7 @@ const Product = ({product}) => {
   return (
     <div className="product-card">
       <div>
-        <img src={product.thumbnail} alt={product.images[2]} className="product-thumbnail" />
+        <img src={product.thumbnail} alt={product.thumbnail} className="product-thumbnail" />
       </div>
       <div className="product-info">
         <span className="product-title">{product.title}</span>
