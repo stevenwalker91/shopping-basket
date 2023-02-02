@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { NavLink } from 'react-router-dom';
 
-const Shop = () => {
+const Sidebar = () => {
 
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState([true])
@@ -19,18 +20,24 @@ const Shop = () => {
   },[isLoading])
 
   return (
-    <div>
-      <h1>Shop</h1>
+    <nav className="sidebar">
       <ul>
       { !isLoading ? 
-        categories.map((item) => {
-          return <li className="category-list-name" key={uuidv4()}>{item.replace('-', ' ')}</li>
+        categories.sort().map((item) => {
+          return (
+          <NavLink 
+            to={`/shop/${item}`}
+            state={{category: `${item}`}}
+            key={uuidv4()}>
+              <li className="category-list-name">{item.replace('-', ' ')}</li>
+          </NavLink>
+          )
         })
         : 'loading' // to be replaced with loader.js
       }
       </ul>
-    </div>
+    </nav>
   )
 }
 
-export default Shop;
+export default Sidebar;
