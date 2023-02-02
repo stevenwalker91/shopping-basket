@@ -1,5 +1,4 @@
 const Product = ({product}) => {
-  console.log(product)
   return (
     <div className="product-card">
       <div>

@@ -3,7 +3,7 @@ import Products from "./Products";
 import { useLocation} from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Shop = (props) => {
+const Shop = () => {
 
   const [shoppingCategory, setShoppingCategory] = useState('')
 

@@ -31,14 +31,16 @@ ul {
   padding: 0px;
 }
 
-.nav-list>a>li {
-  padding: 10px;
+.nav-list>li {
+
   list-style: none;
 }
 
 a {
   text-decoration: none;
   color: white;
+  display: flex;
+  padding: 10px;
 }
 
 .category-list-name {
@@ -62,11 +64,6 @@ a {
 .sidebar>ul {
   position: sticky;
   top: 50px;
-}
-
-.category-list-name {
-  list-style: none;
-  padding: 10px;
 }
 
 .category-list-name:hover {
@@ -117,10 +114,6 @@ a {
 }
 
 .active {
-  background-color: rgb(39 172 204);
-}
-
-.active>li {
   background-color: rgb(39 172 204);
 }
 
