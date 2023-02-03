@@ -28,6 +28,4 @@ describe('Nav', () => {
     expect(link).toBeVisible();
     expect(link).toHaveAttribute('href', '/shop')
   })
-
-  
 })
