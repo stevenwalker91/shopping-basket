@@ -18,7 +18,6 @@ const Products = ({category}) => {
 
       const result = await fetch(url);
       const products = await result.json();
-
       setProductList(products.products);
       setIsLoading(false);
     }
