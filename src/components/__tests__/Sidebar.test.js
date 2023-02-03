@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BrowserRouter } from "react-router-dom";
 import Sidebar from '../Sidebar';
@@ -10,27 +10,9 @@ describe('Sidebar', () => {
     const header = screen.getByRole("navigation");
     expect(header).toBeInTheDocument();
   })
-
-  it('displays the loader until data is available',  async () => {
-    jest.spyOn(global, 'fetch').mockImplementation(() => Promise.resolve({
-      json: () => Promise.resolve([
-        'electronics',
-        'clothing',
-        'shoes',
-        'sports',
-        'Automotive'
-      ])
-    }));
-
+  it('removes the loader', async () => {
     render(<BrowserRouter><Sidebar/></BrowserRouter>);
-    
-    const spinner = screen.queryByTestId("spinner");
-    expect(spinner).toBeInTheDocument();
-
-    await waitForElementToBeRemoved(spinner);
-    expect(spinner).not.toBeInTheDocument();
-
-    global.fetch.mockClear();
+    await waitForElementToBeRemoved(() => screen.queryByTestId("spinner"));
   })
 
   it('makes the request to the API', async () => {

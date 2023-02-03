@@ -18,7 +18,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     getShoppingCategories();
-  },[isLoading])
+  },[])
 
   return (
     <nav className="sidebar">
