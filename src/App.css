@@ -205,6 +205,7 @@ button:disabled {
   display: flex;
   padding: 20px;
   align-items: flex-start;
+  gap: 10px;
 }
 
 .shopping-basket {
