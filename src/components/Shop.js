@@ -2,6 +2,7 @@ import Sidebar from "./Sidebar";
 import Products from "./Products";
 import { useLocation} from "react-router-dom";
 import { useState, useEffect } from "react";
+import Basket from "./Basket";
 
 const Shop = () => {
 
@@ -20,13 +21,14 @@ const Shop = () => {
     setShoppingCategory(category)
   }, [category])
 
-  
-  
-
   return (
     <div className="shop-container">
       <Sidebar />
-      <Products category={shoppingCategory}/>
+      <div className="main-section">
+        <Products category={shoppingCategory}/>
+        <Basket />
+      </div>
+      
     </div>
   )
 }
