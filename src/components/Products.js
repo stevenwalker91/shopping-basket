@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import Product from './Product';
 import Loader from './Loader';
 
-const Products = ({category}) => {
+const Products = ({category, addToBasket}) => {
 
   const [productList, setProductList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +35,7 @@ const Products = ({category}) => {
       <h1>{category.replace('-', ' ')}</h1>
       <div className="products-list">
       {isLoading ? <Loader color="black" /> :
-        productList.map(product => <Product product={product} key={product.id}/>)
+        productList.map(product => <Product product={product} key={product.id}addToBasket={addToBasket}/>)
       }
       </div>
     </div>

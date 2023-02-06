@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import QuantityToggle from './QuantityToggle';
 
-const Product = ({product}) => {
+const Product = ({product, addToBasket}) => {
 
   return (
     <div className="product-card">
@@ -11,7 +11,11 @@ const Product = ({product}) => {
       <div className="product-info">
         <span className="product-title">{product.title}</span>
         <span>£{product.price}</span>
-        <QuantityToggle product={product.id} toggleType="add"/>
+        <QuantityToggle 
+          product={product} 
+          toggleType="add"
+          addToBasket={addToBasket}
+          />
           
       </div>
     </div>
