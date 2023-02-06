@@ -58,11 +58,13 @@ describe('Product List', () => {
 
   it('shows the product details', async () => {
     render(<Products category="all"/>);
-
     await window.fetch();
+
     expect(await screen.findByRole('img')).toBeInTheDocument();
     expect(await screen.findByText('lighting ceiling kitchen')).toBeInTheDocument();
     expect(await screen.findByText('£30')).toBeInTheDocument();
     expect(await screen.findByRole('img')).toHaveAttribute('alt', 'Wholesale slim hanging decorative kid room lighting ceiling kitchen chandeliers pendant light modern');
   })
+
+
 })
