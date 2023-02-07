@@ -9,7 +9,7 @@ const Product = ({product, addToBasket}) => {
       </div>
       <div className="product-info">
         <span className="product-title">{product.title}</span>
-        <span>£{product.price.toLocaleString()}</span>
+        <span>£{product.price.toLocaleString('en-GB')}</span>
         <QuantityToggle 
           product={product} 
           toggleType="add"

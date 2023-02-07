@@ -3,21 +3,25 @@ const Basket = ({basketContents, removeFromBasket}) => {
   const generateProductList = () => {
     return basketContents.map(item => {
       const lineTotal = item.qty * item.price;
-      return <p key={item.id}>{`${item.title} x ${item.qty}: £${lineTotal.toLocaleString()}`}</p>
+      return (
+      <p 
+        key={item.id}
+      >
+        {`${item.title} x ${item.qty}: £${lineTotal.toLocaleString('en-GB')}`}
+      </p>
+      )
     })
   }
 
   const getBasketTotal = () => {
     const itemsInBasket = basketContents.length
+    // if statement is required otherwise error for calling reduce on empty array
     if(itemsInBasket> 0) {
       const total = basketContents.reduce( ( a , b ) => a + (b.price * b.qty) , 0);
-      return total.toLocaleString();
+      return total.toLocaleString('en-GB');
     }
    return 0;
   }
-
-  getBasketTotal();
-
 
   return (
     <div className="shopping-basket">
