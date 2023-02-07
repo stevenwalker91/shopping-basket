@@ -45,8 +45,6 @@ const Shop = () => {
     if (basketArray[productToUpdate].qty === 0) {
       basketArray.splice(productToUpdate, 1)
     }
-
-
     setProductsInBasket(basketArray);
   }
 
