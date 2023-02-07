@@ -76,7 +76,7 @@ a {
   flex-wrap: wrap;
   gap: 20px;
   height: fit-content;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .products {
