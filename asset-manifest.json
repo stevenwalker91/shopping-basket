@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/shopping-basket/static/css/main.09e61ae1.css",
+    "main.js": "/shopping-basket/static/js/main.c32da8c0.js",
+    "static/media/background.jpg": "/shopping-basket/static/media/background.2b5bca0c554a4b796633.jpg",
+    "index.html": "/shopping-basket/index.html",
+    "main.09e61ae1.css.map": "/shopping-basket/static/css/main.09e61ae1.css.map",
+    "main.c32da8c0.js.map": "/shopping-basket/static/js/main.c32da8c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09e61ae1.css",
+    "static/js/main.c32da8c0.js"
+  ]
+}
