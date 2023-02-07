@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Basket from '../Basket';
+import userEvent from '@testing-library/user-event';
 
 const sampleData = [
   {
@@ -125,7 +126,21 @@ describe('Basket', () => {
     expect(row).toContainHTML('value="3"');
   })
   it('displays basket total', () => {
-    render(<Basket basketContents={sampleData}/>)
+
+    render(<Basket basketContents={sampleData} />)
     expect(screen.getByText(/£7,126/)).toBeInTheDocument();
+  })
+  it('deducts the qty when a user changes qty', async () => {
+    const changeBasketQty = jest.fn();
+    render(<Basket basketContents={sampleData} changeBasketQty={changeBasketQty}/>)
+    const buttons = await screen.findAllByRole('button', {name: '-'})
+    const row = screen.getByRole('row', { name: /iPhone X/ })
+
+    expect(buttons[0]).toBeInTheDocument();
+    expect(row).toContainHTML('value="2"');
+
+    userEvent.click(buttons[0]);
+    expect(row).toContainHTML('value="1"');
+
   })
 })
