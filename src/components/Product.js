@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import QuantityToggle from './QuantityToggle';
 
 const Product = ({product, addToBasket}) => {
@@ -10,7 +9,7 @@ const Product = ({product, addToBasket}) => {
       </div>
       <div className="product-info">
         <span className="product-title">{product.title}</span>
-        <span>£{product.price}</span>
+        <span>£{product.price.toLocaleString()}</span>
         <QuantityToggle 
           product={product} 
           toggleType="add"
