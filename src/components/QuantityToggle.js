@@ -5,6 +5,10 @@ const QuantityToggle = ({product, toggleType, addToBasket, defaultQty, changeBas
   const [qty, setQty] = useState(defaultQty);
   
 
+  useEffect(() => {
+    setQty(defaultQty)
+  },[defaultQty])
+
   const increaseQty = () => {
     if (qty < 99) {
       setQty(qty + 1);
