@@ -252,6 +252,27 @@ table td {
   font-weight: bold;
 }
 
+.hero-banner {
+  background-image: linear-gradient(to right, rgba(0, 165, 242, 0.4), rgba(3, 0, 2, 0.73)), url("../public/assets/background.jpg");
+  height: calc(100vh - 39px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-banner {
+  background-color: #ffffffde;
+  padding: 50px;
+  text-align: center;
+}
+
+.home-banner>button {
+  background-color: rgb(28, 138, 227);
+}
+
 @media (max-width: 950px) {
   .main-section {
     flex-direction: column-reverse;
