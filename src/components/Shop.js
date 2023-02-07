@@ -22,14 +22,15 @@ const Shop = () => {
     setShoppingCategory(category)
   }, [category])
 
-  const addToBasket = (productName, productId, qty) => {
+  const addToBasket = (product, qty) => {
     const basketArray = [...productsInBasket];
-    const productExistsAlready = basketArray.indexOf(basketArray.find(item => item.id === productId));
+    const productExistsAlready = basketArray.indexOf(basketArray.find(item => item.id === product.id));
    
     if (productExistsAlready >= 0 ) {
       basketArray[productExistsAlready].qty += qty;
     } else {
-      basketArray.push({product: productName, id: productId, qty: qty});
+      product.qty = qty;
+      basketArray.push(product);
     }
     
     setProductsInBasket(basketArray);

@@ -27,7 +27,7 @@ const QuantityToggle = ({product, toggleType, addToBasket}) => {
     <button
       className="add-to-basket-btn" 
       type="button"
-      onClick={() => addToBasket(product.title, product.id, qty)}
+      onClick={() => addToBasket(product, qty)}
     >   
       Add
     </button>
@@ -37,7 +37,7 @@ const QuantityToggle = ({product, toggleType, addToBasket}) => {
 
  const handleEnterKey = (key) => {
   if (key === 'Enter') {
-    addToBasket(product.title, product.id, qty);
+    addToBasket(product, qty);
   }
  }
 
