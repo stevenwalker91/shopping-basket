@@ -7,7 +7,7 @@ import Shop from './components/Shop';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename='/shopping-basket'>
         <Nav /> 
         <Routes>
           <Route path="/" element={<Home />} />
