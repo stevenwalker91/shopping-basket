@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/shopping-app/static/css/main.3ecb67f9.css",
+    "main.js": "/shopping-app/static/js/main.137e973a.js",
+    "static/media/background.jpg": "/shopping-app/static/media/background.2b5bca0c554a4b796633.jpg",
+    "index.html": "/shopping-app/index.html",
+    "main.3ecb67f9.css.map": "/shopping-app/static/css/main.3ecb67f9.css.map",
+    "main.137e973a.js.map": "/shopping-app/static/js/main.137e973a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ecb67f9.css",
+    "static/js/main.137e973a.js"
+  ]
+}
