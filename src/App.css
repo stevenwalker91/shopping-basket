@@ -76,6 +76,7 @@ a {
   flex-wrap: wrap;
   gap: 20px;
   height: fit-content;
+  justify-content: space-around;
 }
 
 .products {
@@ -217,12 +218,13 @@ button:disabled {
   top: 20vh;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
     0 6px 20px 0 rgb(0 0 0 / 19%);
-  padding: 10px;
+  padding: 25px;
   font-size: 13px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 15px;
+  background-color: white;
 }
 
 table {
@@ -248,4 +250,16 @@ table td {
 .order-total {
   margin-top: auto;
   font-weight: bold;
+}
+
+@media (max-width: 950px) {
+  .main-section {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .shopping-basket {
+    position: static;
+    min-height: 15vh
+  }
 }
