@@ -1,21 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const QuantityToggle = ({product, toggleType, addToBasket}) => {
-  const [qty, setQty] = useState(1);
+const QuantityToggle = ({product, toggleType, addToBasket, defaultQty, changeBasketQty}) => {
+
+  const [qty, setQty] = useState(defaultQty);
+  
 
   const increaseQty = () => {
     if (qty < 99) {
       setQty(qty + 1);
     } 
+
+    if (toggleType !== 'add') {
+      addToBasket(product, 1);
+    }
   }
 
   const decreaseQty = () => {
+
+    if (toggleType !== 'add') {
+      changeBasketQty(product, qty-1);
+    }
     if (qty > 0) {
       setQty(qty - 1);
     }
   }
 
   const setCustomQty = (qty) => {
+    if (toggleType !== 'add') {
+      changeBasketQty(product, Number(qty));
+    }
+
     if (qty >= 0) {
       setQty(Number(qty));
     }

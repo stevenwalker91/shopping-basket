@@ -14,6 +14,7 @@ const Product = ({product, addToBasket}) => {
           product={product} 
           toggleType="add"
           addToBasket={addToBasket}
+          defaultQty={1}
           />
           
       </div>

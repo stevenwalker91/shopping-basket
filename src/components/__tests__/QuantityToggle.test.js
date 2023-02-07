@@ -7,7 +7,7 @@ import QuantityToggle from '../QuantityToggle';
 
 describe('Quantity Toggle', () => {
   it('displays buttons to change the qty', async () => {
-    render(<QuantityToggle/>);
+    render(<QuantityToggle toggleType="add" defaultQty={1}/>);
 
     expect(await screen.findByRole('button', {name: '+'})).toBeInTheDocument();
     expect(await screen.findByRole('button', {name: '-'})).toBeInTheDocument();
@@ -15,7 +15,7 @@ describe('Quantity Toggle', () => {
 
   })
   it('correctly increases the qty', async () => {
-    render(<QuantityToggle/>);
+    render(<QuantityToggle toggleType="add" defaultQty={1}/>);
     const value = await screen.findByLabelText('Quantity');
     const button = await screen.findByRole('button', {name: '+'});
 
@@ -29,7 +29,7 @@ describe('Quantity Toggle', () => {
   })
 
   it('correctly decreases the qty', async () => {
-    render(<QuantityToggle/>);
+    render(<QuantityToggle toggleType="add" defaultQty={1}/>);
     const value = await screen.findByLabelText('Quantity');
     const addButton = await screen.findByRole('button', {name: '+'});
     const minusButton = await screen.findByRole('button', {name: '-'});
@@ -46,7 +46,7 @@ describe('Quantity Toggle', () => {
   })
 
   it('doesnt allow you to have a negative qty', async () => {
-    render(<QuantityToggle/>);
+    render(<QuantityToggle toggleType="add" defaultQty={1}/>);
     const value = await screen.findByLabelText('Quantity');
     const minusButton = await screen.findByRole('button', {name: '-'});
 
@@ -58,13 +58,13 @@ describe('Quantity Toggle', () => {
   })
 
   it('doesnt show add btn if not provided', async () => {
-    render(<QuantityToggle/>);
+    render(<QuantityToggle defaultQty={1}/>);
     const value = await screen.findByLabelText('Quantity');
     expect(value).toBeInTheDocument();
     expect(screen.queryByRole('button', {name: 'Add'})).not.toBeInTheDocument();
   })
   it('show add btn if provided', async () => {
-    render(<QuantityToggle toggleType="add" />);
+    render(<QuantityToggle toggleType="add" defaultQty={1} />);
     expect(await screen.findByRole('button', {name: 'Add'})).toBeInTheDocument();
   })
 })

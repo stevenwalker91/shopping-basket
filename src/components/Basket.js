@@ -1,14 +1,26 @@
-const Basket = ({basketContents, removeFromBasket}) => {
+import QuantityToggle from "./QuantityToggle";
+
+const Basket = ({basketContents, changeBasketQty, addToBasket}) => {
 
   const generateProductList = () => {
     return basketContents.map(item => {
       const lineTotal = item.qty * item.price;
       return (
-      <p 
+      <tr
         key={item.id}
       >
-        {`${item.title} x ${item.qty}: £${lineTotal.toLocaleString('en-GB')}`}
-      </p>
+        <td className="basket-title">{item.title}</td>
+        
+        <td>£{lineTotal.toLocaleString('en-GB')}</td>
+        <td>
+          <QuantityToggle 
+            product={item}
+            defaultQty={item.qty}
+            changeBasketQty={changeBasketQty}
+            addToBasket={addToBasket} 
+          />
+        </td>
+      </tr>
       )
     })
   }
@@ -26,8 +38,19 @@ const Basket = ({basketContents, removeFromBasket}) => {
   return (
     <div className="shopping-basket">
       <h2>Shopping Basket</h2>
-      {generateProductList()}
-      <span>Order Total: £{getBasketTotal()}</span>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Total</th>
+            <th>Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+        {generateProductList()}
+        </tbody>
+      </table>
+      <span className="order-total">Order Total: £{getBasketTotal()}</span>
     </div>
   )
 }

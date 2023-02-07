@@ -36,6 +36,20 @@ const Shop = () => {
     setProductsInBasket(basketArray);
   }
 
+  const changeBasketQty = (product, qty) => {
+    const basketArray = [...productsInBasket];
+    const productToUpdate = basketArray.indexOf(basketArray.find(item => item.id === product.id));
+
+    basketArray[productToUpdate].qty = qty;
+
+    if (basketArray[productToUpdate].qty === 0) {
+      basketArray.splice(productToUpdate, 1)
+    }
+
+
+    setProductsInBasket(basketArray);
+  }
+
   return (
     <div className="shop-container">
       <Sidebar />
@@ -46,6 +60,8 @@ const Shop = () => {
         />
         <Basket
           basketContents={productsInBasket} 
+          changeBasketQty={changeBasketQty}
+          addToBasket={addToBasket}
         />
       </div>
       
