@@ -8,7 +8,7 @@ See the [live demo here](https://stevenwalker91.github.io/shopping-basket/)
 
 ## What's new/what did I learn
 
-This was my first time using react router and the react testing library to do unit testing. I felt on this onee I really started to get to grip with React and using functional components. One of the areas I'm still not 100% is effective mocking of unit tests, as well as where to draw the line with testng across parent/children components.
+This was my first time using react router and the react testing library to do unit testing. I felt on this one I really started to get to grip with React and using functional components. One of the areas I'm still not 100% is effective mocking of unit tests, as well as where to draw the line with testng across parent/children components.
 
 
 ## Other Comments
